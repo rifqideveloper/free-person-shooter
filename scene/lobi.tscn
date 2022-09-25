@@ -1,0 +1,238 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://posisi_dasar(1).webp" type="Texture" id=1]
+[ext_resource path="res://script/lobi/tombol_tabel.gd" type="Script" id=2]
+[ext_resource path="res://script/lobi/server(3).webp" type="Texture" id=3]
+[ext_resource path="res://script/lobi/sambung(1).webp" type="Texture" id=4]
+[ext_resource path="res://script/lobi/server_tersedia.gd" type="Script" id=5]
+[ext_resource path="res://script/network/network_lobi.gd" type="Script" id=6]
+[ext_resource path="res://script/lobi/lobi.gd" type="Script" id=7]
+
+[node name="lobi" type="CanvasLayer"]
+script = ExtResource( 7 )
+
+[node name="tabel" type="ScrollContainer" parent="."]
+margin_left = 82.0
+margin_top = 70.0
+margin_right = 1023.0
+margin_bottom = 598.0
+
+[node name="GridContainer" type="GridContainer" parent="tabel"]
+margin_right = 941.0
+margin_bottom = 528.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="network" type="HBoxContainer" parent="tabel/GridContainer"]
+margin_right = 941.0
+margin_bottom = 22.0
+script = ExtResource( 6 )
+
+[node name="tambah" type="Button" parent="tabel/GridContainer/network"]
+margin_right = 122.0
+margin_bottom = 22.0
+text = "tambah server"
+icon = ExtResource( 3 )
+flat = true
+
+[node name="sambung" type="Button" parent="tabel/GridContainer/network"]
+margin_left = 126.0
+margin_right = 347.0
+margin_bottom = 22.0
+text = "sambungkan ke server pribadi"
+icon = ExtResource( 4 )
+flat = true
+
+[node name="segarkan" type="Button" parent="tabel/GridContainer/network"]
+margin_left = 351.0
+margin_right = 363.0
+margin_bottom = 22.0
+
+[node name="kembali" type="Button" parent="tabel/GridContainer/network"]
+margin_left = 367.0
+margin_right = 430.0
+margin_bottom = 22.0
+text = "kembali"
+
+[node name="server_tersedia" type="HBoxContainer" parent="tabel/GridContainer"]
+margin_top = 26.0
+margin_right = 941.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+script = ExtResource( 5 )
+
+[node name="ping" type="VBoxContainer" parent="tabel/GridContainer/server_tersedia"]
+margin_right = 181.0
+margin_bottom = 454.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_right = 181.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "ping"
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="server" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 26.0
+margin_right = 181.0
+margin_bottom = 46.0
+
+[node name="server2" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 50.0
+margin_right = 181.0
+margin_bottom = 70.0
+
+[node name="server3" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 74.0
+margin_right = 181.0
+margin_bottom = 94.0
+
+[node name="server4" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 98.0
+margin_right = 181.0
+margin_bottom = 118.0
+
+[node name="server5" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 122.0
+margin_right = 181.0
+margin_bottom = 142.0
+
+[node name="server6" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 146.0
+margin_right = 181.0
+margin_bottom = 166.0
+
+[node name="server7" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 170.0
+margin_right = 181.0
+margin_bottom = 190.0
+
+[node name="server8" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 194.0
+margin_right = 181.0
+margin_bottom = 214.0
+
+[node name="server9" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 218.0
+margin_right = 181.0
+margin_bottom = 238.0
+
+[node name="server10" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 242.0
+margin_right = 181.0
+margin_bottom = 262.0
+
+[node name="server11" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 266.0
+margin_right = 181.0
+margin_bottom = 286.0
+
+[node name="server12" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 290.0
+margin_right = 181.0
+margin_bottom = 310.0
+
+[node name="server13" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 314.0
+margin_right = 181.0
+margin_bottom = 334.0
+
+[node name="server14" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 338.0
+margin_right = 181.0
+margin_bottom = 358.0
+
+[node name="server15" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 362.0
+margin_right = 181.0
+margin_bottom = 382.0
+
+[node name="server16" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 386.0
+margin_right = 181.0
+margin_bottom = 406.0
+
+[node name="server17" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 410.0
+margin_right = 181.0
+margin_bottom = 430.0
+
+[node name="server18" type="Button" parent="tabel/GridContainer/server_tersedia/ping"]
+margin_top = 434.0
+margin_right = 181.0
+margin_bottom = 454.0
+
+[node name="lokasi" type="VBoxContainer" parent="tabel/GridContainer/server_tersedia"]
+margin_left = 185.0
+margin_right = 367.0
+margin_bottom = 454.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="tabel/GridContainer/server_tersedia/lokasi"]
+margin_right = 182.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "lokasi"
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+index = 1
+
+[node name="map" type="VBoxContainer" parent="tabel/GridContainer/server_tersedia"]
+margin_left = 371.0
+margin_right = 553.0
+margin_bottom = 454.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="tabel/GridContainer/server_tersedia/map"]
+margin_right = 182.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "map"
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+index = 2
+
+[node name="nama" type="VBoxContainer" parent="tabel/GridContainer/server_tersedia"]
+margin_left = 557.0
+margin_right = 739.0
+margin_bottom = 454.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="tabel/GridContainer/server_tersedia/nama"]
+margin_right = 182.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "nama"
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+index = 3
+
+[node name="player" type="VBoxContainer" parent="tabel/GridContainer/server_tersedia"]
+margin_left = 743.0
+margin_right = 925.0
+margin_bottom = 454.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="tabel/GridContainer/server_tersedia/player"]
+margin_right = 182.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "player"
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+index = 4
+
+[node name="VScrollBar" type="VScrollBar" parent="tabel/GridContainer/server_tersedia"]
+margin_left = 929.0
+margin_right = 941.0
+margin_bottom = 454.0
+
+[connection signal="pressed" from="tabel/GridContainer/network/tambah" to="tabel/GridContainer/network" method="_on_tambah_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/network/sambung" to="tabel/GridContainer/network" method="_on_sambung_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/server_tersedia/ping/Button" to="tabel/GridContainer/server_tersedia/ping/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/server_tersedia/lokasi/Button" to="tabel/GridContainer/server_tersedia/lokasi/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/server_tersedia/map/Button" to="tabel/GridContainer/server_tersedia/map/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/server_tersedia/nama/Button" to="tabel/GridContainer/server_tersedia/nama/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="tabel/GridContainer/server_tersedia/player/Button" to="tabel/GridContainer/server_tersedia/player/Button" method="_on_Button_pressed"]

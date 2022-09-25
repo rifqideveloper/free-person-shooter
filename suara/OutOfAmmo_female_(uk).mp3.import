@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OutOfAmmo_female_(uk).mp3-1dca408da7e344b8c91c57726cab5b96.mp3str"
+
+[deps]
+
+source_file="res://suara/OutOfAmmo_female_(uk).mp3"
+dest_files=[ "res://.import/OutOfAmmo_female_(uk).mp3-1dca408da7e344b8c91c57726cab5b96.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

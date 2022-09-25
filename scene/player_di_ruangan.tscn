@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/player_di_ruangan.gd" type="Script" id=1]
+
+[node name="player_di_ruangan" type="HBoxContainer"]
+margin_right = 282.0
+margin_bottom = 40.0
+alignment = 1
+script = ExtResource( 1 )

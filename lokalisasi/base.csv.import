@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://lokalisasi/base.en.translation" ]
+
+source_file="res://lokalisasi/base.csv"
+dest_files=[ "res://lokalisasi/base.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

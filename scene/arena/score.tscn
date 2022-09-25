@@ -1,0 +1,239 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/arena/score.gd" type="Script" id=1]
+
+[node name="score" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -378.0
+margin_top = -180.0
+margin_right = 378.0
+margin_bottom = 180.0
+script = ExtResource( 1 )
+player_poin = [ [ [ "test_a", "id", 1, 0, 0, 0, 0, 0 ] ], [ [ "test_b", "sg", 1, 0, 0, 0, 0, 0 ] ] ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+
+[node name="team" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 756.0
+margin_bottom = 14.0
+
+[node name="team_A" type="Label" parent="VBoxContainer/team"]
+margin_right = 184.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "TEAM A  "
+
+[node name="team_A_score" type="Label" parent="VBoxContainer/team"]
+margin_left = 188.0
+margin_right = 372.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "0"
+align = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/team"]
+margin_left = 376.0
+margin_right = 380.0
+margin_bottom = 14.0
+
+[node name="team_B_score" type="Label" parent="VBoxContainer/team"]
+margin_left = 384.0
+margin_right = 568.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "0"
+
+[node name="team_B" type="Label" parent="VBoxContainer/team"]
+margin_left = 572.0
+margin_right = 756.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "TEAM B"
+align = 2
+
+[node name="label_team" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 756.0
+margin_bottom = 50.0
+
+[node name="team_A" type="HBoxContainer" parent="VBoxContainer/label_team"]
+margin_right = 303.0
+margin_bottom = 32.0
+
+[node name="posisi_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_right = 38.0
+margin_bottom = 32.0
+
+[node name="posisi" type="Label" parent="VBoxContainer/label_team/team_A/posisi_list"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "posisi"
+
+[node name="score_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 42.0
+margin_right = 77.0
+margin_bottom = 32.0
+
+[node name="score" type="Label" parent="VBoxContainer/label_team/team_A/score_list"]
+margin_right = 35.0
+margin_bottom = 14.0
+text = "score"
+
+[node name="bunuh_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 81.0
+margin_right = 121.0
+margin_bottom = 32.0
+
+[node name="bunuh" type="Label" parent="VBoxContainer/label_team/team_A/bunuh_list"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "bunuh"
+
+[node name="assis_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 125.0
+margin_right = 157.0
+margin_bottom = 32.0
+
+[node name="assis" type="Label" parent="VBoxContainer/label_team/team_A/assis_list"]
+margin_right = 32.0
+margin_bottom = 14.0
+text = "assis"
+
+[node name="poin_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 161.0
+margin_right = 189.0
+margin_bottom = 32.0
+
+[node name="poin" type="Label" parent="VBoxContainer/label_team/team_A/poin_list"]
+margin_right = 28.0
+margin_bottom = 14.0
+text = "poin"
+
+[node name="ping_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 193.0
+margin_right = 220.0
+margin_bottom = 32.0
+
+[node name="ping" type="Label" parent="VBoxContainer/label_team/team_A/ping_list"]
+margin_right = 27.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "ping"
+
+[node name="lokasi_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 224.0
+margin_right = 261.0
+margin_bottom = 32.0
+
+[node name="lokasi" type="Label" parent="VBoxContainer/label_team/team_A/lokasi_list"]
+margin_right = 37.0
+margin_bottom = 14.0
+text = "lokasi"
+
+[node name="nama_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_A"]
+margin_left = 265.0
+margin_right = 303.0
+margin_bottom = 32.0
+
+[node name="nama" type="Label" parent="VBoxContainer/label_team/team_A/nama_list"]
+margin_right = 38.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "nama"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/label_team"]
+margin_left = 307.0
+margin_right = 448.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="team_B" type="HBoxContainer" parent="VBoxContainer/label_team"]
+margin_left = 452.0
+margin_right = 756.0
+margin_bottom = 32.0
+
+[node name="nama_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_right = 39.0
+margin_bottom = 32.0
+
+[node name="nama" type="Label" parent="VBoxContainer/label_team/team_B/nama_list"]
+margin_right = 39.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "nama"
+
+[node name="lokasi_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 43.0
+margin_right = 80.0
+margin_bottom = 32.0
+
+[node name="lokasi" type="Label" parent="VBoxContainer/label_team/team_B/lokasi_list"]
+margin_right = 37.0
+margin_bottom = 14.0
+text = "lokasi"
+
+[node name="ping_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 84.0
+margin_right = 111.0
+margin_bottom = 32.0
+
+[node name="ping" type="Label" parent="VBoxContainer/label_team/team_B/ping_list"]
+margin_right = 27.0
+margin_bottom = 14.0
+text = "ping"
+
+[node name="poin_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 115.0
+margin_right = 143.0
+margin_bottom = 32.0
+
+[node name="poin" type="Label" parent="VBoxContainer/label_team/team_B/poin_list"]
+margin_right = 28.0
+margin_bottom = 14.0
+text = "poin"
+
+[node name="bunuh_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 147.0
+margin_right = 187.0
+margin_bottom = 32.0
+
+[node name="bunuh" type="Label" parent="VBoxContainer/label_team/team_B/bunuh_list"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "bunuh"
+
+[node name="assis_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 191.0
+margin_right = 223.0
+margin_bottom = 32.0
+
+[node name="assis" type="Label" parent="VBoxContainer/label_team/team_B/assis_list"]
+margin_right = 32.0
+margin_bottom = 14.0
+text = "assis"
+
+[node name="score_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 227.0
+margin_right = 262.0
+margin_bottom = 32.0
+
+[node name="score" type="Label" parent="VBoxContainer/label_team/team_B/score_list"]
+margin_right = 35.0
+margin_bottom = 14.0
+text = "score"
+
+[node name="posisi_list" type="VBoxContainer" parent="VBoxContainer/label_team/team_B"]
+margin_left = 266.0
+margin_right = 304.0
+margin_bottom = 32.0
+
+[node name="posisi" type="Label" parent="VBoxContainer/label_team/team_B/posisi_list"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "posisi"
+
+[connection signal="visibility_changed" from="." to="." method="_on_score_visibility_changed"]

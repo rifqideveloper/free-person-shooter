@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/mag/magazin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://testing/simulasi peluru.gd" type="Script" id=2]
+
+[sub_resource type="SphereMesh" id=1]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+use_collision = true
+mesh = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.622829, 0, -0.782358, 0, 1, 0, 0.782358, 0, 0.622829, -16.724, 0, 13.0012 )
+
+[node name="magazin" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0453053, 0, -10.6534 )

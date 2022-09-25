@@ -1,0 +1,168 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/team.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/map/map_generator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/map/pilih_map.gd" type="Script" id=3]
+
+[node name="ruangan" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1028.0
+margin_bottom = 597.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1028.0
+margin_bottom = 557.0
+size_flags_vertical = 3
+
+[node name="team" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 39.0
+margin_bottom = 557.0
+size_flags_horizontal = 1
+
+[node name="kosong" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 43.0
+margin_right = 985.0
+margin_bottom = 557.0
+size_flags_horizontal = 3
+
+[node name="team_2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 989.0
+margin_right = 1028.0
+margin_bottom = 557.0
+size_flags_horizontal = 1
+team_2 = true
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_top = 561.0
+margin_right = 1028.0
+margin_bottom = 597.0
+tabs_visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="map" type="HBoxContainer" parent="VBoxContainer/TabContainer/CenterContainer"]
+margin_left = 276.0
+margin_right = 743.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/CenterContainer/map"]
+margin_top = 5.0
+margin_right = 28.0
+margin_bottom = 19.0
+text = "map"
+
+[node name="map" type="OptionButton" parent="VBoxContainer/TabContainer/CenterContainer/map"]
+margin_left = 32.0
+margin_right = 61.0
+margin_bottom = 24.0
+script = ExtResource( 3 )
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/CenterContainer/map"]
+margin_left = 65.0
+margin_right = 69.0
+margin_bottom = 24.0
+
+[node name="fps" type="HBoxContainer" parent="VBoxContainer/TabContainer/CenterContainer/map"]
+margin_left = 73.0
+margin_right = 467.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/CenterContainer/map/fps"]
+margin_top = 5.0
+margin_right = 19.0
+margin_bottom = 19.0
+hint_tooltip = "tentukan maximum fps untuk semua player agar gem lebih adil"
+mouse_filter = 1
+text = "fps"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/CenterContainer/map/fps"]
+margin_left = 23.0
+margin_right = 81.0
+margin_bottom = 24.0
+text = "60"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/CenterContainer/map/fps"]
+margin_left = 85.0
+margin_right = 89.0
+margin_bottom = 24.0
+
+[node name="cheat" type="HBoxContainer" parent="VBoxContainer/TabContainer/CenterContainer/map/fps"]
+margin_left = 93.0
+margin_right = 394.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat"]
+margin_top = 5.0
+margin_right = 35.0
+margin_bottom = 19.0
+hint_tooltip = "ijinkan penggunaan cheat (hanya berfungsi pada cheat lokal)"
+mouse_filter = 1
+text = "cheat"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat"]
+margin_left = 39.0
+margin_right = 63.0
+margin_bottom = 24.0
+pressed = true
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat"]
+margin_left = 67.0
+margin_right = 71.0
+margin_bottom = 24.0
+
+[node name="total_player" type="HBoxContainer" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat"]
+margin_left = 75.0
+margin_right = 301.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player"]
+margin_top = 5.0
+margin_right = 72.0
+margin_bottom = 19.0
+text = "total player"
+
+[node name="map" type="OptionButton" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player"]
+margin_left = 76.0
+margin_right = 105.0
+margin_bottom = 24.0
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player"]
+margin_left = 109.0
+margin_right = 113.0
+margin_bottom = 24.0
+
+[node name="mode_game" type="HBoxContainer" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player"]
+margin_left = 117.0
+margin_right = 226.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player/mode_game"]
+margin_top = 5.0
+margin_right = 76.0
+margin_bottom = 19.0
+text = "mode game"
+
+[node name="mode" type="OptionButton" parent="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player/mode_game"]
+margin_left = 80.0
+margin_right = 109.0
+margin_bottom = 24.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera" type="Camera" parent="CanvasLayer"]
+transform = Transform( 1, 0, 0, 0, 0.911224, 0.411912, 0, -0.411912, 0.911224, 0, 20.3264, 31.0082 )
+
+[node name="map_generator" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[connection signal="item_selected" from="VBoxContainer/TabContainer/CenterContainer/map/map" to="VBoxContainer/TabContainer/CenterContainer/map/map" method="_on_map_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/TabContainer/CenterContainer/map/fps/LineEdit" to="VBoxContainer/TabContainer/CenterContainer/map/map" method="_on_LineEdit_text_changed"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/CheckBox" to="VBoxContainer/TabContainer/CenterContainer/map/map" method="_on_CheckBox_toggled"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player/map" to="VBoxContainer/TabContainer/CenterContainer/map/map" method="_on_max_player_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/CenterContainer/map/fps/cheat/total_player/mode_game/mode" to="VBoxContainer/TabContainer/CenterContainer/map/map" method="_on_mode_item_selected"]

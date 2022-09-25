@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://script/kontroler/mobile_controler_pergerakan.gd" type="Script" id=1]
+[ext_resource path="res://script/kontroler/tombol_berubah_warna.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[node name="mobile_controler_pergerakan" type="Node2D"]
+position = Vector2( 80, 69 )
+script = ExtResource( 1 )
+
+[node name="kiri" type="TouchScreenButton" parent="."]
+position = Vector2( -8, -11 )
+rotation = 1.5708
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="kiri"]
+position = Vector2( 10, 20 )
+rotation = 1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="kanan" type="TouchScreenButton" parent="."]
+position = Vector2( 8, 9 )
+rotation = -1.5708
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="kanan"]
+position = Vector2( 10, 20 )
+rotation = 1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="belakang" type="TouchScreenButton" parent="."]
+position = Vector2( -10, 5 )
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="belakang"]
+position = Vector2( 10, 20 )
+rotation = 1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="depan" type="TouchScreenButton" parent="."]
+position = Vector2( 10, -8 )
+rotation = 3.14159
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="depan"]
+position = Vector2( 9.99995, 20 )
+rotation = 1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="putar_kiri" type="TouchScreenButton" parent="."]
+position = Vector2( -21, -50 )
+rotation = 0.872665
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="putar_kiri"]
+position = Vector2( 10.0408, 20.4411 )
+rotation = -1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="putar_kanan" type="TouchScreenButton" parent="."]
+position = Vector2( 8, -35 )
+rotation = -0.872665
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="putar_kanan"]
+position = Vector2( 10.0408, 20.4411 )
+rotation = -1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="bawah" type="TouchScreenButton" parent="."]
+position = Vector2( 38, 7 )
+rotation = 0.872665
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="bawah"]
+position = Vector2( 10.0408, 20.4411 )
+rotation = -1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[node name="atas" type="TouchScreenButton" parent="."]
+position = Vector2( -51, 22 )
+rotation = -0.872665
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="atas"]
+position = Vector2( 10.0408, 20.4411 )
+rotation = -1.5708
+scale = Vector2( 20, 10 )
+mesh = SubResource( 2 )
+
+[connection signal="pressed" from="kiri" to="." method="_on_kiri_pressed"]
+[connection signal="released" from="kiri" to="." method="_on_kiri_released"]
+[connection signal="pressed" from="kanan" to="." method="_on_kanan_pressed"]
+[connection signal="released" from="kanan" to="." method="_on_kanan_released"]
+[connection signal="pressed" from="belakang" to="." method="_on_belakang_pressed"]
+[connection signal="released" from="belakang" to="." method="_on_belakang_released"]
+[connection signal="pressed" from="depan" to="." method="_on_depan_pressed"]
+[connection signal="released" from="depan" to="." method="_on_depan_released"]
+[connection signal="pressed" from="putar_kiri" to="." method="_on_putar_kiri_pressed"]
+[connection signal="released" from="putar_kiri" to="." method="_on_putar_kiri_released"]
+[connection signal="pressed" from="putar_kanan" to="." method="_on_putar_kanan_pressed"]
+[connection signal="released" from="putar_kanan" to="." method="_on_putar_kanan_released"]
+[connection signal="pressed" from="bawah" to="." method="_on_bawah_pressed"]
+[connection signal="released" from="bawah" to="." method="_on_bawah_released"]
+[connection signal="pressed" from="atas" to="." method="_on_atas_pressed"]
+[connection signal="released" from="atas" to="." method="_on_atas_released"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/map_generator.gd" type="Script" id=1]
+
+[node name="map_generator" type="Spatial"]
+script = ExtResource( 1 )
+
+[connection signal="posisi_dipilih" from="." to="." method="_on_map_generator_posisi_dipilih"]

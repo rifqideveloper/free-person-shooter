@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/target_latihan.gd" type="Script" id=1]
+
+[node name="target_latihan" type="CSGBox" groups=["player"]]
+use_collision = true
+script = ExtResource( 1 )

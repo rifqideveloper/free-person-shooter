@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/pengaturan_akun.gd" type="Script" id=1]
+[ext_resource path="res://scene/konfirmasi.tscn" type="PackedScene" id=2]
+
+[node name="pengaturan_akun" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 143.0
+margin_top = 112.0
+margin_right = 962.0
+margin_bottom = 554.0
+tabs_visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="TabContainer/VBoxContainer"]
+margin_right = 811.0
+margin_bottom = 14.0
+text = "nama"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 811.0
+margin_bottom = 42.0
+
+[node name="Label2" type="Label" parent="TabContainer/VBoxContainer"]
+margin_top = 46.0
+margin_right = 811.0
+margin_bottom = 60.0
+text = "password"
+
+[node name="LineEdit2" type="LineEdit" parent="TabContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 811.0
+margin_bottom = 88.0
+
+[node name="LineEdit3" type="LineEdit" parent="TabContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 811.0
+margin_bottom = 116.0
+
+[node name="Button" type="Button" parent="TabContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 811.0
+margin_bottom = 140.0
+text = "simpan"
+
+[node name="hapus akun" type="Button" parent="TabContainer/VBoxContainer"]
+modulate = Color( 0.992157, 0, 0, 1 )
+margin_top = 144.0
+margin_right = 811.0
+margin_bottom = 164.0
+text = "hapus akun"
+
+[node name="konfirmasi" parent="." instance=ExtResource( 2 )]
+margin_left = 241.0
+margin_top = 298.0
+margin_right = 488.0
+margin_bottom = 398.0
+dialog_text = "anda yakin ingin menghapus akun ?"
+
+[connection signal="pressed" from="TabContainer/VBoxContainer/hapus akun" to="." method="_on_hapus_akun_pressed"]
+[connection signal="confirmed" from="konfirmasi" to="." method="_on_konfirmasi_confirmed"]
