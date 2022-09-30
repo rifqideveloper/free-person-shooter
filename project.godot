@@ -9,16 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
-}, {
 "base": "Reference",
 "class": "GotmAuth",
 "language": "GDScript",
@@ -88,16 +78,6 @@ _global_script_classes=[ {
 "class": "GotmUser",
 "language": "GDScript",
 "path": "res://gotm/GotmUser.gd"
-}, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 }, {
 "base": "Reference",
 "class": "_Gotm",
@@ -225,8 +205,6 @@ _global_script_classes=[ {
 "path": "res://script/map/kelas/standar_map.gd"
 } ]
 _global_script_class_icons={
-"ContributorClass": "",
-"GistItem": "",
 "GotmAuth": "",
 "GotmBlob": "",
 "GotmConfig": "",
@@ -241,8 +219,6 @@ _global_script_class_icons={
 "GotmQuery": "",
 "GotmScore": "",
 "GotmUser": "",
-"InvitationItem": "",
-"RepositoryItem": "",
 "_Gotm": "",
 "_GotmAuth": "",
 "_GotmAuthLocal": "",
@@ -283,6 +259,7 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+Global="*res://autoload/global.gd"
 
 [compression]
 
@@ -306,7 +283,7 @@ version_control_plugin_name="GitAPI"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gdnative]
 

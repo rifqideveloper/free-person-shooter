@@ -109,6 +109,7 @@ enum mode_tembak {
 	trio = 2
 	trip_stop = 4
 }
+const nama_file_akun : String = "user://akun.dat"
 var amunisi_habis : String = "res://suara/OutOfAmmo_female(id).mp3"
 
 func cek_data(seting_baru:Dictionary = setingan) -> Dictionary :

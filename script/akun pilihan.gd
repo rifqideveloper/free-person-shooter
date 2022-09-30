@@ -11,7 +11,18 @@ func _buka_akun() -> void :
 	$keluar.visible = !$keluar.visible
 	
 func _keluar() -> void :
-	pass
+	var nama_file_akun : String = preload("res://autoload/global.gd").nama_file_akun
+	
+	var f : File = File.new()
+	if f.open(nama_file_akun,File.READ_WRITE) == OK :
+		print("hapus ",f.get_sha256(nama_file_akun))
+		f.store_var(null)		
+		f.flush()
+		print("hapus ",f.get_sha256(nama_file_akun))
+	f.close()
+	
+	get_tree().change_scene("res://scene/beranda.tscn")
+	
 	
 func _seting() -> void :
 	pass

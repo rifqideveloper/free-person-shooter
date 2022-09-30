@@ -8,7 +8,9 @@ func _ready():
 	var v : File = File.new()
 	if v.open("user://akun.dat",File.READ_WRITE) == OK :
 		var x = v.get_var()
-		_login(x["nama"],x["pass"],x["tipe"])
+		
+		if x != null :
+			_login(x["nama"],x["pass"],x["tipe"])
 	v.close()
 	
 func _latihan_selesai() -> void:
@@ -58,13 +60,4 @@ func _login(nama:String,pass_:String,tipe:int) -> void:
 func _on_local_Button_pressed():
 	var nama  : String = $buat_login/lokal/VBoxContainer/LineEdit.text.trim_suffix(" ")
 	if !nama.empty() :
-		#bug : login gagal dipeluncur di code art studio
-		#fix 
-		var script:Script = load("res://autoload/global.gd")
-		print("test")
-		var node : Node = Node.new()
-		node.name = "Global"
-		node.set_script(script)
-		get_tree().root.add_child(node)
-		#fix
 		_login(nama,"",get_node("/root/Global").tipe_akun.local)

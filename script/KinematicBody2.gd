@@ -1,5 +1,11 @@
 extends KinematicBody
 signal mouse (event)
+signal bidik
+signal menu
+signal isi_ulang
+signal keluar
+signal mati
+signal kena_tembak(dmg)
 signal koleksi_input
 var mouse_sens : float = 0.3
 const akselerasi : float = 0.01
@@ -9,7 +15,10 @@ var rotasi_data : Vector3 = Vector3.ZERO
 #var r_y  : float
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	connect("mouse",self,"_mouse_input")
+	if false :
+		connect("mouse",self,"_mouse_input_terbalik")
+	else :
+		connect("mouse",self,"_mouse_input")
 	connect("koleksi_input",self,"_tembak")
 	connect("koleksi_input",self,"_input_lain")	
 	connect("koleksi_input",self,"_pergerakan",[2,"ui_down","ui_up"])
@@ -21,13 +30,17 @@ func _ready():
 	#debug
 	if true :
 		connect("koleksi_input",self,"_debug")
-	
-func _mouse_input(event) -> void :
-	var r_x = deg2rad( -event.relative.x * mouse_sens) 
-	var r_y = deg2rad( -event.relative.y * mouse_sens) 
-	rotate_y(r_x)
-	rotate_x(r_y)
+
+func _mouse_input_terbalik(event) -> void:
+	rotate_x(deg2rad( -event.relative.x * mouse_sens))
+	rotate_y(deg2rad( -event.relative.y * mouse_sens))
 	rotation_degrees.z = 0
+
+func _mouse_input(event) -> void :
+	rotate_y(deg2rad( -event.relative.x * mouse_sens))
+	rotate_x(deg2rad( -event.relative.y * mouse_sens))
+	rotation_degrees.z = 0
+	#rotate(Vector3(deg2rad( -event.relative.y * mouse_sens),deg2rad( -event.relative.x * mouse_sens),0),0.0)
 
 func _menu_keluar() -> void :
 	var v : Node = get_child(6)
@@ -36,7 +49,7 @@ func _menu_keluar() -> void :
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func keluar_dari_arena() -> void :
-	pass
+	emit_signal("keluar")
 
 func _input_lain() -> void:
 	if Input.is_action_pressed("ui_exite_"):
@@ -63,6 +76,13 @@ func _input_lain() -> void:
 func _tembak() -> void :
 	if Input.is_action_pressed("ui_tembak") and get_child_count() == 6:
 		$senjata.emit_signal("tembak")
+	elif Input.is_action_pressed("ui_bidik"):
+		emit_signal("bidik")
+	elif Input.is_action_pressed("ui_isi_ulang"):
+		if false :
+			emit_signal("isi_ulang")
+		else :
+			emit_signal("amunisi_habis")
 		
 func _pergerakan(index:int,x:String,y:String) -> void:
 	var v : int = Input.get_action_strength(x) - Input.get_action_strength(y)
@@ -92,7 +112,7 @@ func _putar(x:String,y:String) -> void :
 func _debug()->void:
 	$player_ui/debug.text  = "fps : " + str(Engine.get_frames_per_second()) + "\n"
 	$player_ui/debug.text += "pergerakan : " + str(pergerakan) + "\n"
-	$player_ui/debug.text += "rotasi : " + str(rotasi_data) + "\n"
+	$player_ui/debug.text += "rotasi : " + str(rotation) + "\n"
 	
 
 func _physics_process(delta) -> void :

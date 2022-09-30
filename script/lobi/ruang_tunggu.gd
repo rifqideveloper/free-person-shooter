@@ -3,18 +3,28 @@ extends Spatial
 const tipe_ruang =  preload("res://autoload/global.gd").tipe_ruang
 onready var tipe : int = get_node("/root/Global").tipe_lobi
 var ukuran_map : Array = [10,10]
+
+var player_list : Array = [
+	
+]
+
 func _ready():
+	var f : File = File.new()
+	var nama = preload("res://autoload/global.gd").nama_file_akun
+	if f.open(nama,File.READ) == OK:
+		var v = f.get_var()
+		player_list.push_back([v["nama"],get_node("/root/Global").tipe_lobi,0,false])
+	f.close()
 	_ubah_tipe_ruang()
 	$CanvasLayer/Panel/HFlowContainer/LineEdit_seed.connect("text_entered",self,"_seed")
 	$CanvasLayer/Panel/HFlowContainer/acak_seed.connect("pressed",self,"_acak_seed")
 	$CanvasLayer/Panel/HFlowContainer/LineEdit_ukuran_seed.connect("text_entered",self,"_ubah_ukuran")
 	$CanvasLayer/Panel/HFlowContainer/acak_seed.emit_signal("pressed")
-
+	$CanvasLayer/playerlist._update(player_list)
 func _seed(_seed) -> void :
 	_update(tipe,_seed)
 
 func _ubah_ukuran (ukur:String) -> void :
-	
 	if false :
 		pass
 	elif ukur.is_valid_integer() :
@@ -71,3 +81,7 @@ func _ubah_tipe_ruang() -> void :
 			$CanvasLayer/Panel/HFlowContainer/Label_jumlah.visible = true
 			$CanvasLayer/Panel/HFlowContainer/LineEdit_jumlah.visible = false
 	#_update(tipe,null)
+
+
+func _on_Button_pressed():
+	print("siap")
